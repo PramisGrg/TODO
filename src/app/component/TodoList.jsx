@@ -2,6 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import TodoForm from "./TodoForm";
+import Todo from "./Todo";
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
@@ -17,10 +18,21 @@ const TodoList = () => {
     console.log(todo, ...todos);
   };
 
+  const completeTodo = (id) => {
+    let updateTodos = todos.map((todo) => {
+      if (todos.id == id) {
+        todoIsComplete = !todoIsComplete;
+      }
+      return todo;
+    });
+    setTodos(updateTodos);
+  };
+
   return (
     <div>
       <h1>What's your plan for Today</h1>
       <TodoForm onSubmit={addTodo} />
+      <Todo todos={todos} completeTodo={completeTodo} />
     </div>
   );
 };
