@@ -1,38 +1,34 @@
-"use client";
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const TodoForm = (props) => {
-  const [input, setInput] = useState(" ");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Hello");
-  };
+  const [input, setInput] = useState("");
 
   const handleChange = (e) => {
     setInput(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
     props.onSubmit({
       id: Math.floor(Math.random() * 10000),
       text: input,
     });
+
+    setInput("");
   };
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <input
-          className=" border border-black"
+          className="border border-black"
           type="text"
           placeholder="Add a todo"
           value={input}
-          name="text"
           onChange={handleChange}
-        ></input>
-        <button type="submit" className="">
-          Add todo
-        </button>
+        />
+        <button type="submit">Add todo</button>
       </form>
     </div>
   );

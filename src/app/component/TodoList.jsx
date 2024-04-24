@@ -4,7 +4,7 @@ import { useState } from "react";
 import TodoForm from "./TodoForm";
 
 const TodoList = () => {
-  const [todos, setTodos] = useState("");
+  const [todos, setTodos] = useState([]);
 
   const addTodo = (todo) => {
     if (!todo.text || /^\s*$/.test(todo.text)) {
@@ -14,7 +14,7 @@ const TodoList = () => {
     const newTodos = [todo, ...todos];
 
     setTodos(newTodos);
-    console.log(...todos);
+    console.log(todo, ...todos);
   };
 
   return (
