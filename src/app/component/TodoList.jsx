@@ -33,11 +33,22 @@ const TodoList = () => {
     setTodos(removeArr);
   };
 
+  const updateTodo = (todoId, newValue) => {
+    setTodos((prev) =>
+      prev.map((item) => (item.id == todoId ? newValue : item))
+    );
+  };
+
   return (
     <div>
       <h1>What's your plan for Today</h1>
       <TodoForm onSubmit={addTodo} />
-      <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} />
+      <Todo
+        todos={todos}
+        completeTodo={completeTodo}
+        removeTodo={removeTodo}
+        updateTodo={updateTodo}
+      />
     </div>
   );
 };
