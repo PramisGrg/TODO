@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { MdDelete } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 
-const Todo = ({ todos, completeTodo }) => {
+const Todo = ({ todos, completeTodo, removeTodo }) => {
   const [edit, setEdit] = useState({
     id: null,
     value: "",
@@ -15,8 +15,8 @@ const Todo = ({ todos, completeTodo }) => {
           {todo.text}
         </div>
         <div>
-          <MdDelete />
-          <FaEdit />
+          <MdDelete onClick={() => removeTodo(todo.id)} />
+          <FaEdit onClick={() => setEdit({ id: todo.id, vlaue: todo.text })} />
         </div>
       </div>
     );
