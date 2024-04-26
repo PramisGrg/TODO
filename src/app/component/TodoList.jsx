@@ -41,7 +41,7 @@ const TodoList = () => {
 
   return (
     <div className="bg-[#9796dd] flex flex-col items-center h-screen">
-      <div className="bg-[#2c1d1d] m-20 h-screen p-10 rounded-2xl">
+      <div className="bg-[#000000] m-20 h-screen p-10 rounded-2xl">
         <TodoForm onSubmit={addTodo} />
         <Todo
           todos={todos}
