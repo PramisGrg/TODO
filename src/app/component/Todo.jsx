@@ -32,8 +32,12 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
         </div>
         <div>
           <div className="flex ml-4 mt-1 gap-2">
-            <MdDelete onClick={() => removeTodo(todo.id)} />
+            <MdDelete
+              className="hover:text-red-600"
+              onClick={() => removeTodo(todo.id)}
+            />
             <FaEdit
+              className="hover:text-green-500"
               onClick={() => setEdit({ id: todo.id, vlaue: todo.text })}
             />
           </div>
