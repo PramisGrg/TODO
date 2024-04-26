@@ -40,15 +40,16 @@ const TodoList = () => {
   };
 
   return (
-    <div>
-      <h1>What's your plan for Today</h1>
-      <TodoForm onSubmit={addTodo} />
-      <Todo
-        todos={todos}
-        completeTodo={completeTodo}
-        removeTodo={removeTodo}
-        updateTodo={updateTodo}
-      />
+    <div className="bg-[#9796dd] flex flex-col items-center h-screen">
+      <div className="bg-[#2c1d1d] m-20 h-screen p-10 rounded-2xl">
+        <TodoForm onSubmit={addTodo} />
+        <Todo
+          todos={todos}
+          completeTodo={completeTodo}
+          removeTodo={removeTodo}
+          updateTodo={updateTodo}
+        />
+      </div>
     </div>
   );
 };

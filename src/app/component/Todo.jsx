@@ -23,13 +23,20 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
 
   return todos.map((todo, index) => {
     return (
-      <div key={index}>
+      <div
+        className="mt-4 flex text-white m-4 bg-blue-500 p-4 rounded-sm text-xl"
+        key={index}
+      >
         <div key={todo.id} onClick={() => completeTodo(todo.id)}>
           {todo.text}
         </div>
         <div>
-          <MdDelete onClick={() => removeTodo(todo.id)} />
-          <FaEdit onClick={() => setEdit({ id: todo.id, vlaue: todo.text })} />
+          <div className="flex ml-4 mt-1 gap-2">
+            <MdDelete onClick={() => removeTodo(todo.id)} />
+            <FaEdit
+              onClick={() => setEdit({ id: todo.id, vlaue: todo.text })}
+            />
+          </div>
         </div>
       </div>
     );
