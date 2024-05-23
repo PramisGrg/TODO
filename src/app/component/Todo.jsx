@@ -24,7 +24,7 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
   return todos.map((todo, index) => {
     return (
       <div
-        className="mt-4 flex text-white m-4 bg-blue-500 p-4 rounded-sm text-xl"
+        className="mt-4 flex m-4 text-white bg-blue-500 p-4 rounded-lg text-xl"
         key={index}
       >
         <div key={todo.id} onClick={() => completeTodo(todo.id)}>

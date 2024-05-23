@@ -8,6 +8,7 @@ const TodoList = () => {
   const [todos, setTodos] = useState([]);
 
   const addTodo = (todo) => {
+    console.log(todo);
     if (!todo.text || /^\s*$/.test(todo.text)) {
       return;
     }
@@ -40,8 +41,11 @@ const TodoList = () => {
   };
 
   return (
-    <div className="bg-[#7c78e8] flex flex-col items-center h-screen">
-      <div className="bg-[#000000] m-20 h-screen p-10 rounded-2xl">
+    <div className="flex flex-col items-center h-screen">
+      <div className="bg-[#69e1b9] m-20 h-screen p-10 rounded-2xl">
+        <h1 className="text-4xl text-center mb-4 text-slate-600">
+          What's your plan for Today
+        </h1>
         <TodoForm onSubmit={addTodo} />
         <Todo
           todos={todos}

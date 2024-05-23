@@ -26,11 +26,11 @@ const TodoForm = (props) => {
 
   return (
     <div className="">
-      <h1 className="text-4xl m-4 text-white">What's your plan for Today</h1>
+      {/* <h1 className="text-4xl m-4 text-white">What's your plan for Today</h1> */}
       <form onSubmit={handleSubmit}>
-        <div className="flex">
+        <div className="flex gap-2">
           <input
-            className="border border-black rounded-md p-1.5 w-full"
+            className="border border-black rounded-md p-3 w-[400px]"
             type="text"
             placeholder="Add a todo"
             value={input}
@@ -38,7 +38,7 @@ const TodoForm = (props) => {
             ref={inputRef}
           />
           <button
-            className="ml-2 p-1.5 text-white bg-[#7271d2] rounded-md hover:bg-purple-400"
+            className="p-1.5 font-bold text-white bg-blue-500 rounded-md hover:scale-105 duration-300 hover:bg-purple-500"
             type="submit"
           >
             Add Todo
